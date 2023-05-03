@@ -18,9 +18,7 @@ class MainActivity : AppCompatActivity() {
         val txtResult: TextView = findViewById(R.id.txt_result)
         val btnGenerate: Button = findViewById(R.id.btn_generate)
 
-
         btnGenerate.setOnClickListener {
-
             val text = editText.text.toString()
             numberGenerator(text, txtResult)
         }
@@ -33,10 +31,8 @@ class MainActivity : AppCompatActivity() {
             val qtd = text.toInt()
 
             if (qtd in 6..15) {
-
                 val numbers = mutableSetOf<Int>()
                 val randon = Random()
-
                 while (true) {
                     val number = randon.nextInt(60) + 1
                     numbers.add(number)
@@ -44,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 txtResult.text = numbers.joinToString(" - ")
-                
+
             } else {
                 Toast.makeText(this, "Informe um número entre 6 e 15", Toast.LENGTH_LONG).show()
             }
